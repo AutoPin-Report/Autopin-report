@@ -879,3 +879,10 @@ button,input,select,textarea{font-family:inherit;}
   .heroChecks span{font-size:11px!important;}
   .drawingMock{min-height:250px!important;}
 }
+
+
+@media (max-width: 768px){
+  .headerStart{
+    margin-right:12px !important;
+  }
+}
