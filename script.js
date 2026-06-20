@@ -97,12 +97,21 @@ async function pdfToImages(file){
   return images;
 }
 function makeFloorOptions(){
-  const names = ['GF', ...Array.from({length:25}, (_,i)=>`Level ${String(i+1).padStart(2,'0')}`)];
-  els.quickFloors.innerHTML = names.map(n => `<button type="button" data-floor="${n}">+ ${n}</button>`).join('');
-  els.quickFloors.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
-    els.floorName.value = btn.dataset.floor;
-    els.drawingUpload.click();
-  }));
+  const names = ['GF', ...Array.from({length:25}, (_,i)=>`Level ${String(i+1).padStart(2,'0')}`), 'Basement', 'Roof'];
+  const select = document.getElementById('quickFloorSelect');
+  const uploadBtn = document.getElementById('quickFloorUploadBtn');
+  if(!select) return;
+  select.innerHTML = '<option value="">Choose floor</option>' + names.map(n => `<option value="${n}">${n}</option>`).join('');
+  select.addEventListener('change', () => {
+    els.floorName.value = select.value;
+  });
+  if(uploadBtn){
+    uploadBtn.addEventListener('click', () => {
+      if(!select.value){ alert('Please choose a floor first.'); return; }
+      els.floorName.value = select.value;
+      els.drawingUpload.click();
+    });
+  }
 }
 const PROJECTS_KEY = 'autopin_report_saved_projects_v36';
 const ACTIVE_DRAFT_KEY = 'autopin_report_active_draft_v36';

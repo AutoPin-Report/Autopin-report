@@ -1156,3 +1156,60 @@ button,input,select,textarea{font-family:inherit;}
     font-size:12px !important;
   }
 }
+
+
+/* V38.1 FINAL CLEAN HERO TRANSITION - Ann Mary requested only hero background blend fix */
+/* Purpose: remove the awkward diagonal/white cut and make the hero end straight and premium. */
+.premiumHome{
+  background:#ffffff !important;
+}
+.premiumHero{
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255,107,0,.08), transparent 26%),
+    radial-gradient(circle at 86% 30%, rgba(59,130,246,.14), transparent 32%),
+    linear-gradient(180deg, #061942 0%, #071f53 54%, #082965 100%) !important;
+  padding-bottom:96px !important;
+  overflow:visible !important;
+}
+.premiumHero:before{
+  display:none !important;
+  content:none !important;
+}
+.premiumHero:after{
+  display:none !important;
+  content:none !important;
+}
+.productShot,
+.productShot.animatedWorkspace{
+  box-shadow:0 28px 70px rgba(7,27,77,.24), 0 0 0 1px rgba(255,255,255,.38) !important;
+}
+.whyAutopinCard,
+.whyTeamsPremium{
+  margin-top:42px !important;
+}
+@media(max-width:1180px){
+  .premiumHero{
+    background:linear-gradient(180deg,#061942 0%,#071f53 58%,#082965 100%) !important;
+    padding-bottom:72px !important;
+  }
+}
+@media(max-width:860px){
+  .premiumHero{
+    background:linear-gradient(180deg,#061942 0%,#071f53 58%,#082965 100%) !important;
+    padding-bottom:52px !important;
+  }
+  .whyAutopinCard,
+  .whyTeamsPremium{
+    margin-top:24px !important;
+  }
+}
+
+
+/* V39: Floor quick selector changed from scrolling tile list to compact dropdown */
+.quickFloorPicker{margin:12px 0!important}
+.quickFloorPicker label{margin:0 0 6px!important}
+.floorPickerRow{display:grid!important;grid-template-columns:1fr auto!important;gap:8px!important;align-items:center!important}
+.quickFloorPicker select{height:46px!important;font-weight:800!important;background:#fff!important}
+.quickFloorPicker button{border:1px solid var(--line)!important;background:#fff!important;border-radius:12px!important;padding:10px 14px!important;font-weight:800!important;cursor:pointer!important;min-height:46px!important}
+.quickFloorPicker button:hover{border-color:var(--blue)!important;color:var(--blue)!important}
+@media(max-width:650px){.floorPickerRow{grid-template-columns:1fr!important}}
