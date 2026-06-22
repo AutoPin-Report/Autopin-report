@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import iconAsset from "@/assets/autopin-icon.png.asset.json";
 
 function NotFoundComponent() {
   return (
@@ -66,6 +67,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4ca8c943-ba4e-4d2c-92cc-3b07ea6c863e/id-preview-b2b129b6--51368b97-669d-4c29-8cd9-13a05e3ed2ca.lovable.app-1782082759673.png" },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: iconAsset.url },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
