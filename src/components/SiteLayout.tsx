@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { Menu, X } from "lucide-react";
-import logoAsset from "@/assets/autopin-full-logo.png.asset.json";
+import logoAsset from "@/assets/autopin-logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -14,7 +14,7 @@ function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2.5 shrink-0 group" aria-label="AutoPin Report — Home">
       <span className="relative inline-flex items-center rounded-xl bg-white px-2 py-1.5 shadow-[0_8px_22px_-10px_rgba(255,122,0,0.55)] ring-1 ring-white/15">
-        <img src={logoAsset.url} alt="AutoPin Report" className="h-7 w-auto" />
+       <img src={logoAsset} alt="AutoPin Report" className="h-7 w-auto" />
         <span className="pointer-events-none absolute -inset-1 rounded-xl bg-[color:var(--brand-orange)]/25 blur-md opacity-0 group-hover:opacity-100 transition" />
       </span>
     </Link>
